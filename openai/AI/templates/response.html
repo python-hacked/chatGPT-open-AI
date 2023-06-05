@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3> Write A content</h3>
+<form method="post" action='/' enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type='text' class='form-control' name='user_input'>
+    <button type='submit' class='btn btn-primary mt-3'>Submit</button>
+</form>
+<br>
+
+{% if response %}
+<div>
+    {{response|safe}}
+</div>
+{% endif %}
+{% endblock content %}
